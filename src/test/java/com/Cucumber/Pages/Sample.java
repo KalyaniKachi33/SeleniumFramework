@@ -1,14 +1,17 @@
 package com.Cucumber.Pages;
 
+import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
-public class Sample {
-
+public class Sample extends BasePage{
+    public Sample( WebDriver driver)
+    {
+        this.driver=driver;
+    }
     public void navigateToURL()
     {
-        System.setProperty("webdriver.chrome.driver" ,"D://driver//chromedriver.exe");
-        WebDriver driver = new ChromeDriver();
+        driverSetUp();
         driver.get("https://google.com");
         driver.quit();
     }
